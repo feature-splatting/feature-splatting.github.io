@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Empowering gaussian splatting with foundation vision features and physics engine">
+  <meta name="keywords" content="Gaussian Splatting, 3D Editing, Physics Simulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Language-Driven Physics-Based Scene Synthesis and Editing via Feature Splatting</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-55NDKMPMDH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-55NDKMPMDH');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Language-Driven Physics-Based Scene Synthesis and Editing via Feature Splatting</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+                <a href="https://rogerqi.github.io/" target="_blank">Ri-Zhao Qiu</a><sup>*1</sup>,
+            </span>
+            <span class="author-block">
+                <a href="https://www.episodeyang.com/" target="_blank"> Ge Yang</a><sup>*2, 3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/weijia-zeng-0a4686238/" target="_blank"> Weijia Zeng</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+                <a href="https://xiaolonw.github.io/" target="_blank">Xiaolong Wang</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>UC San Diego,</span>
+            <span class="author-block"><sup>2</sup>MIT</span>
+            <span class="author-block"><sup>3</sup>IAIFI</span>
+            <p style="margin-top: -0.25rem" />
+            <span class="author-block" style="font-size: 0.7em; font-style: italic;"><sup>*</sup>Indicates equal contribution</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/vuer-ai/feature_splatting"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- teaser video section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <video controls autoplay muted loop>
+          <source src="./resources/teaser_overview.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<h2 class="title is-5", style="text-align: center;">TLDR: Language-grounded gaussian splatting enables physics-based scene editing</h2>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-vase">
+          <video poster="" id="vase" controls muted playsinline height="100%">
+            <source src="./resources/vase_physics.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-statue">
+          <video poster="" id="statue" controls muted playsinline height="100%">
+            <source src="./resources/standing_statue_physics.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-bulldozer">
+          <video poster="" id="bulldozer" controls muted playsinline height="100%">
+            <source src="./resources/bulldozer_physics.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-ball-chair">
+          <video poster="" id="ball-chair" controls muted playsinline height="100%">
+            <source src="./resources/ball_chair_physics.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          Scene representations using 3D Gaussian primitives have produced excellent
+          results in modeling the appearance of static and dynamic 3D scenes. Many
+          graphics applications, however, demand the ability to manipulate both the
+          appearance and the physical properties of objects. We introduce
+          Feature Splatting, an approach that unifies physics-based dynamic scene
+          synthesis with rich semantics from vision language foundation models that
+          are grounded by natural language. Our first contribution is a way to distill
+          high-quality, object-centric vision-language features into 3D Gaussians, that
+          enables semi-automatic scene decomposition using text queries. Our second
+          contribution is a way to synthesize physics-based dynamics from an otherwise
+          static scene using a particle-based simulator, in which material properties
+          are assigned automatically via text queries. We ablate key techniques used in
+          this pipeline, to illustrate the challenge and opportunities in using
+          feature-carrying 3D Gaussians as a unified format for appearance, geometry,
+          material properties and semantics grounded on natural language.
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+<!-- Method section -->
+
+<section, class="section">
+<div class="columns is-centered">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3", style="text-align: center;">Method Overview</h2>
+    <tr>
+      <td>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <img src="./resources/pipeline_overview.jpg" style="width: 100.0%;"></img>
+        </div>
+      </td>
+    </tr>
+
+    <h2 class="content is-5", style="text-align: center;">Feature splatting jointly optimizes for a <strong>unified</strong> Gaussian representation
+      for appearance, geometry, and semantics. Feature splatting goes beyond open-vocabulary segmentation to dive
+      into component-level details to <strong>automatically determines physical properties of materials</strong> based on features.</h2>
+    
+    </br>
+    
+    <h2 class="title is-4", style="text-align: center;">Splatting Features onto Gaussians</h2>
+
+    <tr>
+      <td>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <img src="./resources/feature_splatting_overview.jpg" style="width: 100.0%;"></img>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="./resources/feat_comparison.jpg" style="width: 100.0%;"></img>
+        </div>
+      </td>
+    </tr>
+    <h2 class="content is-5", style="text-align: center;">We fuse features from <strong>multiple foundation 2D Vision models</strong>.
+      We train latent features to rasterize both SAM-enhanced CLIP features and DINOv2 features for better quality.
+    </h2>
+    
+    </br>
+
+    <h2 class="title is-4", style="text-align: center;">Systems optimization</h2>
+
+    <tr>
+      <td>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <img src="./resources/optimization.png" style="width: 80.0%;"></img>
+        </div>
+      </td>
+    </tr>
+    <h2 class="content is-5", style="text-align: center;">Feature splatting is <strong>engeeringly optimized</strong> for better efficiency to support future Gaussian+feature research.
+      We implemented our custom CUDA kernels for optimized memory access pattern.</h2>
+
+  </div>
+</div>
+
+</section>
+
+<section, class="section">
+<div class="columns is-centered">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3", style="text-align: center;">Applications (besides Physics)</h2>
+    
+    <h2 class="title is-4", style="text-align: center;">Geometric Editing</h2>
+
+    <tr>
+      <td>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <img src="./resources/basic_ops_fixed.jpg" style="width: 80.0%;"></img>
+        </div>
+      </td>
+    </tr>
+    <h2 class="content is-5", style="text-align: center;">Feature splatting implements several editing primitives, such as
+      object removal, scaling, rotation, translation, and cloning.
+    </h2>
+    
+    </br>
+
+    <h2 class="title is-4", style="text-align: center;">Tabletop Manipulation</h2>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <video controls autoplay muted loop style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+            <source src="./resources/robotics.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+    <h2 class="content is-5", style="text-align: center;">The optimized efficiency and capability for open-vocabulary segmentation
+      allows feature splatting to support robotics applications like tabletop manipulation. We demonstrate the combination of feature
+      splatting with GraspNet for open-vocabulary pick-and-place using FR3 arm.</h2>
+
+  </div>
+</div>
+
+</section>
+
+<!-- Bibtex section -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{qiu-2024-featuresplatting,
+      title={Language-Driven Physics-Based Scene Synthesis and Editing via Feature Splatting},
+      author={TBD},
+      journal={TBD},
+      year={2024}
+    }</code></pre>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <!-- <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p> -->
+          <p align="center" >
+          Page template from <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a> 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
