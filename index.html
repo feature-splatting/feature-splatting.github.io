@@ -144,39 +144,6 @@
 
 <h2 class="title is-5", style="text-align: center;">TLDR: Language-grounded gaussian splatting enables physics-based scene editing</h2>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-vase">
-          <video poster="" id="vase" controls muted playsinline height="100%">
-            <source src="./resources/vase_physics.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-statue">
-          <video poster="" id="statue" controls muted playsinline height="100%">
-            <source src="./resources/standing_statue_physics.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-bulldozer">
-          <video poster="" id="bulldozer" controls muted playsinline height="100%">
-            <source src="./resources/bulldozer_physics.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-ball-chair">
-          <video poster="" id="ball-chair" controls muted playsinline height="100%">
-            <source src="./resources/ball_chair_physics.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -205,17 +172,15 @@
     <!--/ Abstract. -->
 </section>
 
-<!-- Method section -->
+<section class="section">
+  <h2 class="title is-3", style="text-align: center;">Language-Driven Physics-Based Scene Synthesis</h2>
 
-<section, class="section">
-<div class="columns is-centered">
   <div class="container is-max-desktop">
-    <h2 class="title is-3", style="text-align: center;">Method Overview</h2>
     <tr>
       <td>
         <br>
         <div class="columns is-centered has-text-centered">
-          <img src="./resources/pipeline_overview.jpg" style="width: 100.0%;"></img>
+          <img src="./resources/pipeline_overview.jpg" style="width: 80.0%;"></img>
         </div>
       </td>
     </tr>
@@ -223,6 +188,74 @@
     <h2 class="content is-5", style="text-align: center;">Feature splatting jointly optimizes for a <strong>unified</strong> Gaussian representation
       for appearance, geometry, and semantics. Feature splatting goes beyond open-vocabulary segmentation to dive
       into component-level details to <strong>automatically determines physical properties of materials</strong> based on features.</h2>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <h2 class="title is-4", style="text-align: center;">Shake a rigid vase with elastic flower stems.</h2>
+    <div class="column">
+      <div class="content">
+        <div style="text-align: center;">
+          <video controls autoplay muted loop style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%; width: 60%;">
+            <source src="./resources/vase_physics.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="title is-4", style="text-align: center;">Make a slim standing statue move like jelly.</h2>
+    <div class="column">
+      <div class="content">
+        <div style="text-align: center;">
+          <video controls autoplay muted loop style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%; width: 60%;">
+            <source src="./resources/standing_statue_physics.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="title is-4", style="text-align: center;">Turn a lego bulldozer into a pile of sand.</h2>
+    <div class="column">
+      <div class="content">
+        <div style="text-align: center;">
+          <video controls autoplay muted loop style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%; width: 60%;">
+            <source src="./resources/bulldozer_physics.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="title is-4", style="text-align: center;">Make a ball fall off from a chair.</h2>
+    <div class="column">
+      <div class="content">
+        <div style="text-align: center;">
+          <video controls autoplay muted loop style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%; width: 60%;">
+            <source src="./resources/ball_chair_physics.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Method section -->
+
+<section, class="section">
+<div class="columns is-centered">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3", style="text-align: center;">Method Overview</h2>
     
     </br>
     
@@ -232,10 +265,10 @@
       <td>
         <br>
         <div class="columns is-centered has-text-centered">
-          <img src="./resources/feature_splatting_overview.jpg" style="width: 100.0%;"></img>
+          <img src="./resources/feature_splatting_overview.jpg" style="width: 70.0%;"></img>
         </div>
         <div class="columns is-centered has-text-centered">
-          <img src="./resources/feat_comparison.jpg" style="width: 100.0%;"></img>
+          <img src="./resources/feat_comparison.jpg" style="width: 70.0%;"></img>
         </div>
       </td>
     </tr>
@@ -245,18 +278,19 @@
     
     </br>
 
-    <h2 class="title is-4", style="text-align: center;">Systems optimization</h2>
+    <h2 class="title is-4", style="text-align: center;">Optimized Feature Rasterization</h2>
 
     <tr>
       <td>
         <br>
         <div class="columns is-centered has-text-centered">
-          <img src="./resources/optimization.png" style="width: 80.0%;"></img>
+          <img src="./resources/optimization.png" style="width: 70.0%;"></img>
         </div>
       </td>
     </tr>
-    <h2 class="content is-5", style="text-align: center;">Feature splatting is <strong>engeeringly optimized</strong> for better efficiency to support future Gaussian+feature research.
-      We implemented our custom CUDA kernels for optimized memory access pattern.</h2>
+    <h2 class="content is-5", style="text-align: center;">Feature splatting is <strong>engineeringly optimized</strong>
+      to support future Gaussian+feature research.
+      We implemented custom CUDA kernels for optimized memory access pattern to rasterize high-dimensional features.</h2>
 
   </div>
 </div>
@@ -278,8 +312,8 @@
         </div>
       </td>
     </tr>
-    <h2 class="content is-5", style="text-align: center;">Feature splatting implements several editing primitives, such as
-      object removal, scaling, rotation, translation, and cloning.
+    <h2 class="content is-5", style="text-align: center;">Feature splatting implements several editing primitives for scene
+      editing, such as object removal, scaling, rotation, translation, and cloning.
     </h2>
     
     </br>
@@ -296,9 +330,10 @@
         </div>
       </div>
     </div>
-    <h2 class="content is-5", style="text-align: center;">The optimized efficiency and capability for open-vocabulary segmentation
-      allows feature splatting to support robotics applications like tabletop manipulation. We demonstrate the combination of feature
-      splatting with GraspNet for open-vocabulary pick-and-place using FR3 arm.</h2>
+    <h2 class="content is-5", style="text-align: center;">The optimized efficiency
+      allows feature splatting to support robotics applications.
+      We demonstrate open-vocabulary pick-and-place by combining feature splatting with GraspNet
+      on a FR3 arm platform.</h2>
 
   </div>
 </div>
