@@ -250,81 +250,6 @@
 
 </section>
 
-<!-- Method section -->
-
-<section, class="section">
-<div class="columns is-centered">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3", style="text-align: center;">Method Overview</h2>
-    
-    </br>
-    
-    <h2 class="title is-4", style="text-align: center;">Splatting Features onto Gaussians</h2>
-
-    <tr>
-      <td>
-        <br>
-        <div class="columns is-centered has-text-centered">
-          <img src="./resources/feature_splatting_overview.jpg" style="width: 70.0%;"></img>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <img src="./resources/feat_comparison.jpg" style="width: 70.0%;"></img>
-        </div>
-      </td>
-    </tr>
-    <h2 class="content is-5", style="text-align: center;">We fuse features from <strong>multiple foundation 2D Vision models</strong>.
-      We train latent features to rasterize both SAM-enhanced CLIP features and DINOv2 features for better quality.
-    </h2>
-
-    <!-- <div class="column">
-      <div class="content">
-        <div class="publication-video"> -->
-          <iframe src="https://vuer.ai/?scene=3gAIqGNoaWxkcmVukd4AB6hjaGlsZHJlbpCjdGFnpVNwbGF0o2tleaE1o3NyY9lLaHR0cHM6Ly9mZWF0dXJlLXNwbGF0dGluZy5naXRodWIuaW8vcmVzb3VyY2VzL3NwbGF0cy9nYXJkZW5fdGFibGVfcGNhLnNwbGF0pXNjYWxlAahwb3NpdGlvbpMAAACocm90YXRpb26TAAAAo3RhZ6VTY2VuZaNrZXmhOKJ1cJMAAQCoc2hvd0dyaWTCq3Jhd0NoaWxkcmVukt4ABKhjaGlsZHJlbpCjdGFnrEFtYmllbnRMaWdodKNrZXm1ZGVmYXVsdF9hbWJpZW50X2xpZ2h0qWludGVuc2l0eQHeAAWoY2hpbGRyZW6Qo3RhZ7BEaXJlY3Rpb25hbExpZ2h0o2tleblkZWZhdWx0X2RpcmVjdGlvbmFsX2xpZ2h0qWludGVuc2l0eQGmaGVscGVyw6xodG1sQ2hpbGRyZW6QqmJnQ2hpbGRyZW6T3gADqGNoaWxkcmVukKN0YWeqR3JhYlJlbmRlcqNrZXmnREVGQVVMVN4AA6hjaGlsZHJlbpCjdGFnr1BvaW50ZXJDb250cm9sc6NrZXmhNt4AA6hjaGlsZHJlbpCjdGFnpEdyaWSja2V5oTc%3D" width="100%" height="600px" frameborder="0"></iframe>
-        <!-- </div>
-      </div>
-    </div> -->
-
-    <h2 class="content is-5", style="text-align: center;">PCA Visualization of latent features of every Gaussian in the garden vase scene
-      using <a href="https://docs.vuer.ai/" target="_blank">Vuer</a>.
-    </h2>
- 
-    </br>
-
-    <h2 class="title is-4", style="text-align: center;">Optimized Feature Rasterization</h2>
-
-    <tr>
-      <td>
-        <br>
-        <div class="columns is-centered has-text-centered">
-          <img src="./resources/optimization.png" style="width: 70.0%;"></img>
-        </div>
-      </td>
-    </tr>
-    <h2 class="content is-5", style="text-align: center;">Feature splatting is <strong>engineeringly optimized</strong>
-      to support future Gaussian+feature research.
-      We implemented custom CUDA kernels for optimized memory access pattern to rasterize high-dimensional features.</h2>
-    
-    </br>
-
-    <h2 class="title is-4", style="text-align: center;">MPM-based Physics Simulation</h2>
-
-    <tr>
-      <td>
-        <br>
-        <div class="columns is-centered has-text-centered">
-          <img src="./resources/physics_pipeline.jpg" style="width: 85.0%;"></img>
-        </div>
-      </td>
-    </tr>
-    <h2 class="content is-5", style="text-align: center;">Feature splatting automatically computes
-      component-level and scene-level information that are turned in to a customized physics engine
-    based on Taichi for physics simulation.</h2>
-
-  </div>
-</div>
-
-</section>
-
 <section, class="section">
 <div class="columns is-centered">
   <div class="container is-max-desktop">
@@ -362,6 +287,75 @@
       allows feature splatting to support robotics applications.
       We demonstrate open-vocabulary pick-and-place by combining feature splatting with GraspNet
       on a FR3 arm platform.</h2>
+
+  </div>
+</div>
+
+</section>
+
+<!-- Method section -->
+
+<section, class="section">
+<div class="columns is-centered">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3", style="text-align: center;">Method Overview</h2>
+    
+    </br>
+    
+    <h2 class="title is-4", style="text-align: center;">Splatting Features onto Gaussians</h2>
+
+    <tr>
+      <td>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <img src="./resources/feature_splatting_overview.jpg" style="width: 70.0%;"></img>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="./resources/feat_comparison.jpg" style="width: 70.0%;"></img>
+        </div>
+      </td>
+    </tr>
+    <h2 class="content is-5", style="text-align: center;">We fuse features from <strong>multiple foundation 2D Vision models</strong>.
+      We train latent features to rasterize both SAM-enhanced CLIP features and DINOv2 features for better quality.
+    </h2>
+
+    <iframe src="https://vuer.ai/?scene=3gAIqGNoaWxkcmVukd4AB6hjaGlsZHJlbpCjdGFnpVNwbGF0o2tleaE1o3NyY9lLaHR0cHM6Ly9mZWF0dXJlLXNwbGF0dGluZy5naXRodWIuaW8vcmVzb3VyY2VzL3NwbGF0cy9nYXJkZW5fdGFibGVfcGNhLnNwbGF0pXNjYWxlAahwb3NpdGlvbpMAAACocm90YXRpb26TAAAAo3RhZ6VTY2VuZaNrZXmhOKJ1cJMAAQCoc2hvd0dyaWTCq3Jhd0NoaWxkcmVukt4ABKhjaGlsZHJlbpCjdGFnrEFtYmllbnRMaWdodKNrZXm1ZGVmYXVsdF9hbWJpZW50X2xpZ2h0qWludGVuc2l0eQHeAAWoY2hpbGRyZW6Qo3RhZ7BEaXJlY3Rpb25hbExpZ2h0o2tleblkZWZhdWx0X2RpcmVjdGlvbmFsX2xpZ2h0qWludGVuc2l0eQGmaGVscGVyw6xodG1sQ2hpbGRyZW6QqmJnQ2hpbGRyZW6T3gADqGNoaWxkcmVukKN0YWeqR3JhYlJlbmRlcqNrZXmnREVGQVVMVN4AA6hjaGlsZHJlbpCjdGFnr1BvaW50ZXJDb250cm9sc6NrZXmhNt4AA6hjaGlsZHJlbpCjdGFnpEdyaWSja2V5oTc%3D" width="100%" height="600px" frameborder="0"></iframe>
+
+    <h2 class="content is-5", style="text-align: center;">PCA Visualization of latent features of every Gaussian in the garden vase scene
+      using <a href="https://docs.vuer.ai/" target="_blank">Vuer</a>.
+    </h2>
+ 
+    </br>
+
+    <h2 class="title is-4", style="text-align: center;">Optimized Feature Rasterization</h2>
+
+    <tr>
+      <td>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <img src="./resources/optimization.png" style="width: 70.0%;"></img>
+        </div>
+      </td>
+    </tr>
+    <h2 class="content is-5", style="text-align: center;">Feature splatting is <strong>engineeringly optimized</strong>
+      to support future Gaussian+feature research.
+      We implemented custom CUDA kernels for optimized memory access pattern to rasterize high-dimensional features.</h2>
+    
+    </br>
+
+    <h2 class="title is-4", style="text-align: center;">MPM-based Physics Simulation</h2>
+
+    <tr>
+      <td>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <img src="./resources/physics_pipeline.jpg" style="width: 85.0%;"></img>
+        </div>
+      </td>
+    </tr>
+    <h2 class="content is-5", style="text-align: center;">Feature splatting automatically computes
+      component-level and scene-level information that are turned in to a customized physics engine
+    based on Taichi for physics simulation.</h2>
 
   </div>
 </div>
