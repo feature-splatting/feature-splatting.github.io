@@ -78,6 +78,10 @@
             <span class="author-block" style="font-size: 0.7em; font-style: italic;"><sup>*</sup>Indicates equal contribution</span>
           </div>
 
+          <div class="is-size-5 publication-authors">
+            <span class="univerity-block">ECCV 2024</span>
+          </div>
+
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
@@ -116,7 +120,16 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (NerfStudio)</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/vuer-ai/feature_splatting"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (INRIA)</span>
                   </a>
               </span>
             </div>
@@ -173,6 +186,46 @@
 </section>
 
 <section class="section">
+  <h2 class="title is-3", style="text-align: center; color: rgb(169, 16, 151);">New: Try Feature splatting in NerfStudio!</h2>
+
+  <div class="container">
+    <h2 class="title is-4", style="text-align: center">Fast feature extraction speed (~0.2s per image).</h2>
+    <div class="column">
+      <div class="content">
+        <div style="text-align: center;">
+          <video controls autoplay muted loop style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%; width: 60%;">
+            <source src="./resources/basic_ns_demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="content is-5", style="text-align: center;">Feature splatting trains right away - taking only ~5mins for installation, weight download, and feature extraction!
+  </h2>
+
+  <div class="container">
+    <h2 class="title is-4", style="text-align: center;">In-browser interactive scene editing.</h2>
+    <div class="column">
+      <div class="content">
+        <div style="text-align: center;">
+          <video controls autoplay muted loop style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%; width: 60%;">
+            <source src="./resources/ns_editing_compressed.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="content is-5", style="text-align: center;">We implemented custom widgets in NerfStudio to support in-browser geometric editing
+    and physics simulation based on feature splatting.
+  </h2>
+
+</section>
+
+<section class="section">
   <h2 class="title is-3", style="text-align: center;">Language-Driven Physics-Based Scene Synthesis</h2>
 
   <div class="container is-max-desktop">
@@ -193,7 +246,7 @@
   <br>
 
   <div class="container">
-    <h2 class="title is-4", style="text-align: center;">Shake a rigid vase with elastic flower stems.</h2>
+    <h2 class="title is-4", style="text-align: center">Shake a rigid vase with elastic flower stems.</h2>
     <div class="column">
       <div class="content">
         <div style="text-align: center;">
@@ -370,10 +423,10 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{qiu-2024-featuresplatting,
+    <pre><code>@inproceedings{qiu-2024-featuresplatting,
       title={Language-Driven Physics-Based Scene Synthesis and Editing via Feature Splatting},
       author={Ri-Zhao Qiu and Ge Yang and Weijia Zeng and Xiaolong Wang},
-      journal={arXiv preprint arXiv:2404.01223},
+      booktitle={European Conference on Computer Vision (ECCV)},
       year={2024}
     }</code></pre>
   </div>
